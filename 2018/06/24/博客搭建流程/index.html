@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/06/24/博客搭建流程/Hexo.png">
 <meta property="og:image" content="http://yoursite.com/2018/06/24/博客搭建流程/目录结构.png">
-<meta property="og:updated_time" content="2018-06-23T19:04:26.990Z">
+<meta property="og:updated_time" content="2018-06-24T13:56:12.507Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何搭建个人博客">
 <meta name="twitter:description" content="本文就自己如何搭建博客经历做一个记录，现在搭建博客主要是有三种方式:  Wordpress  GitHub + Jekell GitHub + Hexo  第一种方式可以自己购买独立的域名进行搭建，第二种方式比较麻烦，我最开始的时候就是使用的，为了搭建本地环境还是花了不少时间的，最后一种方式应该是最简单的了，所以我现在换成了最后一种搭建方式。 Hexo这是一个基于 Nodejs的静态博客网站生成器">
@@ -404,6 +404,14 @@
 <li>开始部署</li>
 </ul>
 <p>接着打开之前创建的 <code>GitHub</code> 源路径就可以查看了。</p>
+<h2 id="20180624补充"><a href="#20180624补充" class="headerlink" title="20180624补充"></a>20180624补充</h2><p>在发布博客的遇到一个问题，带有图片的博客的上传后图片无法显示出来，后来通过查阅资料得知:</p>
+<ul>
+<li>需要将整体 <code>_config.xml</code> 中的 <code>post_asset_folder</code> 设置为 <code>true</code> 默认为 <code>false</code> </li>
+<li>执行 <code>npm install hexo-asset-image –save</code> 命令安装一个插件</li>
+<li>安装完成后，执行 <code>hexo new 博客名字</code> 后，你会发现你的 <code>_posts</code> 文件夹中多出一个与你博客名字相同的文件夹，将你的图片资源放入后，就可以正常使用原来插入图片的语法了。</li>
+<li>执行 <code>hexo g</code> 部署后，前往 <code>public/年/月/日</code> 的文件夹中查看 <code>index.html</code> 文件内的图片资源显示，如果为 <code>&lt;img src=&quot;/年/月/日/博客名/图片名称&quot; alt=&quot;提示名&quot;&gt;</code> 那么恭喜你，你的博客可以正常显示图片了。</li>
+<li>除了这个方法以外，官方文档中推荐使用标签插件 <code></code> 但是我自己尝试了一下好像没有成功。</li>
+</ul>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.jianshu.com/p/380290deb8f0" target="_blank" rel="noopener">免费个人博客搭建详解 - 简书</a></p>
 
       
@@ -589,7 +597,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo"><span class="nav-number">1.</span> <span class="nav-text">Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整体-config-xml"><span class="nav-number">2.</span> <span class="nav-text">整体 _config.xml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题-config-xml"><span class="nav-number">3.</span> <span class="nav-text">主题 _config.xml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#博客文章编写-amp-检测-amp-发布"><span class="nav-number">4.</span> <span class="nav-text">博客文章编写&amp;检测&amp;发布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo"><span class="nav-number">1.</span> <span class="nav-text">Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整体-config-xml"><span class="nav-number">2.</span> <span class="nav-text">整体 _config.xml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题-config-xml"><span class="nav-number">3.</span> <span class="nav-text">主题 _config.xml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#博客文章编写-amp-检测-amp-发布"><span class="nav-number">4.</span> <span class="nav-text">博客文章编写&amp;检测&amp;发布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20180624补充"><span class="nav-number">5.</span> <span class="nav-text">20180624补充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
