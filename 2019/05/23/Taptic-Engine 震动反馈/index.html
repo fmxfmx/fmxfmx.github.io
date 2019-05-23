@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="iOS开发," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Taptic-Engine 是苹果在2015年发布 iPhone6S 时的一个黑科技，现在的 iPhone 设备上的震动都是由这个东西做的。  并且在 iOS10 的时候推出这么一个类 UIFeedbackGenerator 我们可以使用它来做一些震动反馈，从而在一些特定的场景下提升用户的体验。下面我们就来看看这个类的使用 UIFeedbackGenerator官方文档给出的解释是  The ab">
+<meta name="keywords" content="iOS开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Taptic-Engine 震动反馈">
+<meta property="og:url" content="http://yoursite.com/2019/05/23/Taptic-Engine 震动反馈/index.html">
+<meta property="og:site_name" content="小灬豆米&#39;s Blog">
+<meta property="og:description" content="Taptic-Engine 是苹果在2015年发布 iPhone6S 时的一个黑科技，现在的 iPhone 设备上的震动都是由这个东西做的。  并且在 iOS10 的时候推出这么一个类 UIFeedbackGenerator 我们可以使用它来做一些震动反馈，从而在一些特定的场景下提升用户的体验。下面我们就来看看这个类的使用 UIFeedbackGenerator官方文档给出的解释是  The ab">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-e78539ea8c94430825637883f5b484ac_1200x500.jpg">
+<meta property="og:updated_time" content="2019-05-23T05:53:20.346Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Taptic-Engine 震动反馈">
+<meta name="twitter:description" content="Taptic-Engine 是苹果在2015年发布 iPhone6S 时的一个黑科技，现在的 iPhone 设备上的震动都是由这个东西做的。  并且在 iOS10 的时候推出这么一个类 UIFeedbackGenerator 我们可以使用它来做一些震动反馈，从而在一些特定的场景下提升用户的体验。下面我们就来看看这个类的使用 UIFeedbackGenerator官方文档给出的解释是  The ab">
+<meta name="twitter:image" content="https://pic1.zhimg.com/v2-e78539ea8c94430825637883f5b484ac_1200x500.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/23/Taptic-Engine 震动反馈/"/>
+
+
+
+
+
+  <title>Taptic-Engine 震动反馈 | 小灬豆米's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小灬豆米's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不断积累，不断成长</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/23/Taptic-Engine 震动反馈/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小灬豆米">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小灬豆米's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Taptic-Engine 震动反馈</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-23T13:50:43+08:00">
+                2019-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><code>Taptic-Engine</code> 是苹果在2015年发布 <code>iPhone6S</code> 时的一个黑科技，现在的 <code>iPhone</code> 设备上的震动都是由这个东西做的。</p>
+<p><img src="https://pic1.zhimg.com/v2-e78539ea8c94430825637883f5b484ac_1200x500.jpg" alt="img"></p>
+<p>并且在 <code>iOS10</code> 的时候推出这么一个类 <code>UIFeedbackGenerator</code> 我们可以使用它来做一些震动反馈，从而在一些特定的场景下提升用户的体验。下面我们就来看看这个类的使用</p>
+<h2 id="UIFeedbackGenerator"><a href="#UIFeedbackGenerator" class="headerlink" title="UIFeedbackGenerator"></a>UIFeedbackGenerator</h2><p>官方文档给出的解释是</p>
+<blockquote>
+<p>The abstract superclass for all feedback generators.<br>所有 <code>feedback generators</code> 的父类</p>
+</blockquote>
+<p>系统为我们提供了以下几个子类：</p>
+<ul>
+<li>UIImpactFeedbackGenerator</li>
+</ul>
+<blockquote>
+<p>作为某种反馈来提示用户，例如当交互界面中某个控件达到临界条件的时候，需要这么一个反馈来提示用户</p>
+</blockquote>
+<ul>
+<li>UISelectionFeedbackGenerator</li>
+</ul>
+<blockquote>
+<p>作为一个选择反馈来提示用户，例如当某个开关开启或者关闭的时候，可以使用这种子类去反馈用户</p>
+</blockquote>
+<ul>
+<li>UINotificationFeedbackGenerator</li>
+</ul>
+<blockquote>
+<p>做为一个通知的反馈来提示用户，并且该类包含了 <code>successes</code> <code>failures</code> <code>warninigs</code></p>
+</blockquote>
+<p>官方文档也为我们提供了一个例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">- (IBAction)gestureHandler:(UIPanGestureRecognizer *)sender &#123;</span><br><span class="line">    </span><br><span class="line">    switch (sender.state) &#123;</span><br><span class="line">        case UIGestureRecognizerStateBegan:</span><br><span class="line">            </span><br><span class="line">            // Instantiate a new generator.</span><br><span class="line">            self.feedbackGenerator = [[UISelectionFeedbackGenerator alloc] init];</span><br><span class="line">            </span><br><span class="line">            // Prepare the generator when the gesture begins.</span><br><span class="line">            [self.feedbackGenerator prepare];</span><br><span class="line">            </span><br><span class="line">            break;</span><br><span class="line">            </span><br><span class="line">        case UIGestureRecognizerStateChanged:</span><br><span class="line">            </span><br><span class="line">            // Check to see if the selection has changed...</span><br><span class="line">            if ([self myCustomHasSelectionChangedMethodWithTranslation:[sender translationInView: self.view]]) &#123;</span><br><span class="line">                </span><br><span class="line">                // Trigger selection feedback.</span><br><span class="line">                [self.feedbackGenerator selectionChanged];</span><br><span class="line">                </span><br><span class="line">                // Keep the generator in a prepared state.</span><br><span class="line">                [self.feedbackGenerator prepare];</span><br><span class="line">    </span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            break;</span><br><span class="line">            </span><br><span class="line">        case UIGestureRecognizerStateCancelled:</span><br><span class="line">        case UIGestureRecognizerStateEnded:</span><br><span class="line">        case UIGestureRecognizerStateFailed:</span><br><span class="line">            </span><br><span class="line">            // Release the current generator.</span><br><span class="line">            self.feedbackGenerator = nil;</span><br><span class="line">            </span><br><span class="line">            break;</span><br><span class="line">            </span><br><span class="line">        default:</span><br><span class="line">            </span><br><span class="line">            // Do nothing.</span><br><span class="line">            break;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里需要讨论下一个点就是 <code>UIFeedbackGenerator</code> 为我们提供了 <code>-(void)prepare</code> 方法，这个比较有意思，在这里说下</p>
+<p>当我们调用这个方法时，<code>generator</code> 将会在很短的时间内进入一个准备状态，当 <code>generator</code> 准备完毕时，你可以很快的获得一个震动反馈，这个时间可以忽略不计。<br>我们会在需要反馈前去调用 <code>prepare</code> 方法，因为这样可以使我们在调用反馈时能够很快的起到作用，但是文档中提到如果我们调用完 <code>prepare</code> 时立即调用反馈，这样并不会改善反馈延迟。当我们不再需要到用到反馈时，应该将其移除引用，让系统 <code>deallocate</code> 掉它，这样就会使 <code>Taptic Engine</code> 回到一个空闲状态。</p>
+<p>由于 <code>UIFeedbackGenerator</code> 适用于 <code>iOS10</code> 以上的设备 那么 <code>iOS10</code> 以下的设备可以使用这种方式来进行震动反馈</p>
+<blockquote>
+<p>AudioServicesPlaySystemSound(SystemSoundID inSystemSoundID)</p>
+</blockquote>
+<p>传入的 <code>SoundID</code> 有</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">CF_ENUM(SystemSoundID)</span><br><span class="line">&#123;</span><br><span class="line">    kSystemSoundID_UserPreferredAlert   = 0x00001000,</span><br><span class="line">    kSystemSoundID_FlashScreen          = 0x00000FFE,</span><br><span class="line">        // this has been renamed to be consistent</span><br><span class="line">    kUserPreferredAlert     = kSystemSoundID_UserPreferredAlert</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">CF_ENUM(SystemSoundID)</span><br><span class="line">&#123;</span><br><span class="line">    kSystemSoundID_Vibrate              = 0x00000FFF</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>经过测试，我们一般的震动来自于 <code>kSystemSoundID_Vibrate</code> 这个 <code>SoundID</code> ，但是我们可以通过这几个值来获取到不同的效果</p>
+<blockquote>
+<p>// 普通短震，3D Touch 中 Peek 震动反馈<br>AudioServicesPlaySystemSound(1519);</p>
+</blockquote>
+<blockquote>
+<p>// 普通短震，3D Touch 中 Pop 震动反馈<br>AudioServicesPlaySystemSound(1520);</p>
+</blockquote>
+<blockquote>
+<p>// 连续三次短震<br>AudioServicesPlaySystemSound(1521);</p>
+</blockquote>
+<p>但是这里明显是调用了私有的 <code>API</code> <a href="https://forums.developer.apple.com/thread/45628" target="_blank" rel="noopener">官方</a>不建议我们在发布的应用中这么去使用</p>
+<p>除此之外，还有一种<a href="https://unifiedsense.com/development/using-taptic-engine-on-ios.html" target="_blank" rel="noopener">骚操作</a>可以获取到反馈，这里也不再做再多的介绍了，因为调用的还是私有的 <code>API</code></p>
+<p>对此我将震动反馈封装了下 <a href="https://github.com/fmxfmx/VibrationFeedback" target="_blank" rel="noopener">代码</a> 喜欢的就拿去撸😁</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://zhuanlan.zhihu.com/p/30215868" target="_blank" rel="noopener">Taptic Engine——聊聊iPhone的震动马达 - 知乎</a></p>
+<p><a href="http://zhoulingyu.com/2017/01/16/iOS%E2%80%94%E2%80%94%E5%85%B3%E4%BA%8E-Taptic-Engine-%E9%9C%87%E5%8A%A8%E5%8F%8D%E9%A6%88/" target="_blank" rel="noopener">iOS——关于-Taptic-Engine-震动反馈 | 周小鱼のCODE_HOME</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS开发/" rel="tag"># iOS开发</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/14/自定义文件头部内容/" rel="next" title="自定义文件头部内容">
+                <i class="fa fa-chevron-left"></i> 自定义文件头部内容
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.JPG"
+                alt="小灬豆米" />
+            
+              <p class="site-author-name" itemprop="name">小灬豆米</p>
+              <p class="site-description motion-element" itemprop="description">iOS开发一枚</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/fmxfmx" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#UIFeedbackGenerator"><span class="nav-number">1.</span> <span class="nav-text">UIFeedbackGenerator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小灬豆米</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
