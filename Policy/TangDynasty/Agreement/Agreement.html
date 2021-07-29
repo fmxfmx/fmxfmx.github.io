@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://rc.vccresource.com/web/vmix/favicon.png" />
+    <title>OviCut用户协议</title>
+    <style>
+        /*!
+ * Quill Editor v1.3.6
+ * https://quilljs.com/
+ * Copyright (c) 2014, Jason Chen
+ * Copyright (c) 2013, salesforce.com
+ */
+
+img {
+  max-width: 100%;
+}
+video {
+  margin: 1em auto;
+  max-width: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+
+.ql-container {
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  height: 100%;
+  margin: 0px;
+  position: relative;
+}
+.ql-container.ql-disabled .ql-tooltip {
+  visibility: hidden;
+}
+.ql-container.ql-disabled .ql-editor ul[data-checked] > li::before {
+  pointer-events: none;
+}
+.ql-clipboard {
+  left: -100000px;
+  height: 1px;
+  overflow-y: hidden;
+  position: absolute;
+  top: 50%;
+}
+.ql-clipboard p {
+  margin: 0;
+  padding: 0;
+}
+.ql-editor {
+  box-sizing: border-box;
+  line-height: 1.42;
+  height: 100%;
+  outline: none;
+  overflow-y: auto;
+  padding: 12px 15px;
+  tab-size: 4;
+  -moz-tab-size: 4;
+  text-align: left;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  max-width: 60em;
+  margin: 0 auto;
+}
+.ql-editor > * {
+  cursor: text;
+}
+.ql-editor p,
+.ql-editor ol,
+.ql-editor ul,
+.ql-editor pre,
+.ql-editor blockquote,
+.ql-editor h1,
+.ql-editor h2,
+.ql-editor h3,
+.ql-editor h4,
+.ql-editor h5,
+.ql-editor h6 {
+  margin: 0;
+  padding: 0;
+  counter-reset: list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+}
+.ql-editor ol,
+.ql-editor ul {
+  padding-left: 1.5em;
+}
+.ql-editor ol > li,
+.ql-editor ul > li {
+  list-style-type: none;
+}
+.ql-editor ul > li::before {
+  content: '\2022';
+}
+.ql-editor ul[data-checked='true'],
+.ql-editor ul[data-checked='false'] {
+  pointer-events: none;
+}
+.ql-editor ul[data-checked='true'] > li *,
+.ql-editor ul[data-checked='false'] > li * {
+  pointer-events: all;
+}
+.ql-editor ul[data-checked='true'] > li::before,
+.ql-editor ul[data-checked='false'] > li::before {
+  color: #777;
+  cursor: pointer;
+  pointer-events: all;
+}
+.ql-editor ul[data-checked='true'] > li::before {
+  content: '\2611';
+}
+.ql-editor ul[data-checked='false'] > li::before {
+  content: '\2610';
+}
+.ql-editor li::before {
+  display: inline-block;
+  white-space: nowrap;
+  width: 1.2em;
+}
+.ql-editor li:not(.ql-direction-rtl)::before {
+  margin-left: -1.5em;
+  margin-right: 0.3em;
+  text-align: right;
+}
+.ql-editor li.ql-direction-rtl::before {
+  margin-left: 0.3em;
+  margin-right: -1.5em;
+}
+.ql-editor ol li:not(.ql-direction-rtl),
+.ql-editor ul li:not(.ql-direction-rtl) {
+  padding-left: 1.5em;
+}
+.ql-editor ol li.ql-direction-rtl,
+.ql-editor ul li.ql-direction-rtl {
+  padding-right: 1.5em;
+}
+/* .ql-editor ol li {
+  counter-reset: list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+  counter-increment: list-0;
+} */
+.ql-editor li[data-list=ordered] {
+  counter-reset: list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+  counter-increment: list-0;
+}
+.ql-editor .ql-ui {
+  position: absolute;
+}
+/* .ql-editor ol li:before {
+  content: counter(list-0, decimal) '. ';
+} */
+.ql-editor li[data-list=bullet]>.ql-ui:before {
+  content: '\2022';
+}
+.ql-editor li[data-list=ordered]>.ql-ui:before {
+  content: counter(list-0,decimal) '. ';
+}
+.ql-editor li>.ql-ui:before {
+  display: inline-block;
+  margin-left: -1.5em;
+  margin-right: .3em;
+  text-align: right;
+  white-space: nowrap;
+  width: 1.2em;
+}
+.ql-editor ol li.ql-indent-1 {
+  counter-increment: list-1;
+}
+.ql-editor ol li.ql-indent-1:before {
+  content: counter(list-1, lower-alpha) '. ';
+}
+.ql-editor ol li.ql-indent-1 {
+  counter-reset: list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+}
+.ql-editor ol li.ql-indent-2 {
+  counter-increment: list-2;
+}
+.ql-editor ol li.ql-indent-2:before {
+  content: counter(list-2, lower-roman) '. ';
+}
+.ql-editor ol li.ql-indent-2 {
+  counter-reset: list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+}
+.ql-editor ol li.ql-indent-3 {
+  counter-increment: list-3;
+}
+.ql-editor ol li.ql-indent-3:before {
+  content: counter(list-3, decimal) '. ';
+}
+.ql-editor ol li.ql-indent-3 {
+  counter-reset: list-4 list-5 list-6 list-7 list-8 list-9;
+}
+.ql-editor ol li.ql-indent-4 {
+  counter-increment: list-4;
+}
+.ql-editor ol li.ql-indent-4:before {
+  content: counter(list-4, lower-alpha) '. ';
+}
+.ql-editor ol li.ql-indent-4 {
+  counter-reset: list-5 list-6 list-7 list-8 list-9;
+}
+.ql-editor ol li.ql-indent-5 {
+  counter-increment: list-5;
+}
+.ql-editor ol li.ql-indent-5:before {
+  content: counter(list-5, lower-roman) '. ';
+}
+.ql-editor ol li.ql-indent-5 {
+  counter-reset: list-6 list-7 list-8 list-9;
+}
+.ql-editor ol li.ql-indent-6 {
+  counter-increment: list-6;
+}
+.ql-editor ol li.ql-indent-6:before {
+  content: counter(list-6, decimal) '. ';
+}
+.ql-editor ol li.ql-indent-6 {
+  counter-reset: list-7 list-8 list-9;
+}
+.ql-editor ol li.ql-indent-7 {
+  counter-increment: list-7;
+}
+.ql-editor ol li.ql-indent-7:before {
+  content: counter(list-7, lower-alpha) '. ';
+}
+.ql-editor ol li.ql-indent-7 {
+  counter-reset: list-8 list-9;
+}
+.ql-editor ol li.ql-indent-8 {
+  counter-increment: list-8;
+}
+.ql-editor ol li.ql-indent-8:before {
+  content: counter(list-8, lower-roman) '. ';
+}
+.ql-editor ol li.ql-indent-8 {
+  counter-reset: list-9;
+}
+.ql-editor ol li.ql-indent-9 {
+  counter-increment: list-9;
+}
+.ql-editor ol li.ql-indent-9:before {
+  content: counter(list-9, decimal) '. ';
+}
+.ql-editor .ql-indent-1:not(.ql-direction-rtl) {
+  padding-left: 3em;
+}
+.ql-editor li.ql-indent-1:not(.ql-direction-rtl) {
+  padding-left: 4.5em;
+}
+.ql-editor .ql-indent-1.ql-direction-rtl.ql-align-right {
+  padding-right: 3em;
+}
+.ql-editor li.ql-indent-1.ql-direction-rtl.ql-align-right {
+  padding-right: 4.5em;
+}
+.ql-editor .ql-indent-2:not(.ql-direction-rtl) {
+  padding-left: 6em;
+}
+.ql-editor li.ql-indent-2:not(.ql-direction-rtl) {
+  padding-left: 7.5em;
+}
+.ql-editor .ql-indent-2.ql-direction-rtl.ql-align-right {
+  padding-right: 6em;
+}
+.ql-editor li.ql-indent-2.ql-direction-rtl.ql-align-right {
+  padding-right: 7.5em;
+}
+.ql-editor .ql-indent-3:not(.ql-direction-rtl) {
+  padding-left: 9em;
+}
+.ql-editor li.ql-indent-3:not(.ql-direction-rtl) {
+  padding-left: 10.5em;
+}
+.ql-editor .ql-indent-3.ql-direction-rtl.ql-align-right {
+  padding-right: 9em;
+}
+.ql-editor li.ql-indent-3.ql-direction-rtl.ql-align-right {
+  padding-right: 10.5em;
+}
+.ql-editor .ql-indent-4:not(.ql-direction-rtl) {
+  padding-left: 12em;
+}
+.ql-editor li.ql-indent-4:not(.ql-direction-rtl) {
+  padding-left: 13.5em;
+}
+.ql-editor .ql-indent-4.ql-direction-rtl.ql-align-right {
+  padding-right: 12em;
+}
+.ql-editor li.ql-indent-4.ql-direction-rtl.ql-align-right {
+  padding-right: 13.5em;
+}
+.ql-editor .ql-indent-5:not(.ql-direction-rtl) {
+  padding-left: 15em;
+}
+.ql-editor li.ql-indent-5:not(.ql-direction-rtl) {
+  padding-left: 16.5em;
+}
+.ql-editor .ql-indent-5.ql-direction-rtl.ql-align-right {
+  padding-right: 15em;
+}
+.ql-editor li.ql-indent-5.ql-direction-rtl.ql-align-right {
+  padding-right: 16.5em;
+}
+.ql-editor .ql-indent-6:not(.ql-direction-rtl) {
+  padding-left: 18em;
+}
+.ql-editor li.ql-indent-6:not(.ql-direction-rtl) {
+  padding-left: 19.5em;
+}
+.ql-editor .ql-indent-6.ql-direction-rtl.ql-align-right {
+  padding-right: 18em;
+}
+.ql-editor li.ql-indent-6.ql-direction-rtl.ql-align-right {
+  padding-right: 19.5em;
+}
+.ql-editor .ql-indent-7:not(.ql-direction-rtl) {
+  padding-left: 21em;
+}
+.ql-editor li.ql-indent-7:not(.ql-direction-rtl) {
+  padding-left: 22.5em;
+}
+.ql-editor .ql-indent-7.ql-direction-rtl.ql-align-right {
+  padding-right: 21em;
+}
+.ql-editor li.ql-indent-7.ql-direction-rtl.ql-align-right {
+  padding-right: 22.5em;
+}
+.ql-editor .ql-indent-8:not(.ql-direction-rtl) {
+  padding-left: 24em;
+}
+.ql-editor li.ql-indent-8:not(.ql-direction-rtl) {
+  padding-left: 25.5em;
+}
+.ql-editor .ql-indent-8.ql-direction-rtl.ql-align-right {
+  padding-right: 24em;
+}
+.ql-editor li.ql-indent-8.ql-direction-rtl.ql-align-right {
+  padding-right: 25.5em;
+}
+.ql-editor .ql-indent-9:not(.ql-direction-rtl) {
+  padding-left: 27em;
+}
+.ql-editor li.ql-indent-9:not(.ql-direction-rtl) {
+  padding-left: 28.5em;
+}
+.ql-editor .ql-indent-9.ql-direction-rtl.ql-align-right {
+  padding-right: 27em;
+}
+.ql-editor li.ql-indent-9.ql-direction-rtl.ql-align-right {
+  padding-right: 28.5em;
+}
+.ql-editor .ql-video {
+  display: block;
+  max-width: 100%;
+}
+.ql-editor .ql-video.ql-align-center {
+  margin: 0 auto;
+}
+.ql-editor .ql-video.ql-align-right {
+  margin: 0 0 0 auto;
+}
+.ql-editor .ql-bg-black {
+  background-color: #000;
+}
+.ql-editor .ql-bg-red {
+  background-color: #e60000;
+}
+.ql-editor .ql-bg-orange {
+  background-color: #f90;
+}
+.ql-editor .ql-bg-yellow {
+  background-color: #ff0;
+}
+.ql-editor .ql-bg-green {
+  background-color: #008a00;
+}
+.ql-editor .ql-bg-blue {
+  background-color: #06c;
+}
+.ql-editor .ql-bg-purple {
+  background-color: #93f;
+}
+.ql-editor .ql-color-white {
+  color: #fff;
+}
+.ql-editor .ql-color-red {
+  color: #e60000;
+}
+.ql-editor .ql-color-orange {
+  color: #f90;
+}
+.ql-editor .ql-color-yellow {
+  color: #ff0;
+}
+.ql-editor .ql-color-green {
+  color: #008a00;
+}
+.ql-editor .ql-color-blue {
+  color: #06c;
+}
+.ql-editor .ql-color-purple {
+  color: #93f;
+}
+.ql-editor .ql-font-serif {
+  font-family: Georgia, Times New Roman, serif;
+}
+.ql-editor .ql-font-monospace {
+  font-family: Monaco, Courier New, monospace;
+}
+.ql-editor .ql-size-small {
+  font-size: 0.75em;
+}
+.ql-editor .ql-size-large {
+  font-size: 1.5em;
+}
+.ql-editor .ql-size-huge {
+  font-size: 2.5em;
+}
+.ql-editor .ql-direction-rtl {
+  direction: rtl;
+  text-align: inherit;
+}
+.ql-editor .ql-align-center {
+  text-align: center;
+}
+.ql-editor .ql-align-justify {
+  text-align: justify;
+}
+.ql-editor .ql-align-right {
+  text-align: right;
+}
+.ql-editor.ql-blank::before {
+  color: rgba(0, 0, 0, 0.6);
+  content: attr(data-placeholder);
+  font-style: italic;
+  left: 15px;
+  pointer-events: none;
+  position: absolute;
+  right: 15px;
+}
+.ql-snow.ql-toolbar:after,
+.ql-snow .ql-toolbar:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+.ql-snow.ql-toolbar button,
+.ql-snow .ql-toolbar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  height: 24px;
+  padding: 3px 5px;
+  width: 28px;
+}
+.ql-snow.ql-toolbar button svg,
+.ql-snow .ql-toolbar button svg {
+  float: left;
+  height: 100%;
+}
+.ql-snow.ql-toolbar button:active:hover,
+.ql-snow .ql-toolbar button:active:hover {
+  outline: none;
+}
+.ql-snow.ql-toolbar input.ql-image[type='file'],
+.ql-snow .ql-toolbar input.ql-image[type='file'] {
+  display: none;
+}
+.ql-snow.ql-toolbar button:hover,
+.ql-snow .ql-toolbar button:hover,
+.ql-snow.ql-toolbar button:focus,
+.ql-snow .ql-toolbar button:focus,
+.ql-snow.ql-toolbar button.ql-active,
+.ql-snow .ql-toolbar button.ql-active,
+.ql-snow.ql-toolbar .ql-picker-label:hover,
+.ql-snow .ql-toolbar .ql-picker-label:hover,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active,
+.ql-snow.ql-toolbar .ql-picker-item:hover,
+.ql-snow .ql-toolbar .ql-picker-item:hover,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected {
+  color: #06c;
+}
+.ql-snow.ql-toolbar button:hover .ql-fill,
+.ql-snow .ql-toolbar button:hover .ql-fill,
+.ql-snow.ql-toolbar button:focus .ql-fill,
+.ql-snow .ql-toolbar button:focus .ql-fill,
+.ql-snow.ql-toolbar button.ql-active .ql-fill,
+.ql-snow .ql-toolbar button.ql-active .ql-fill,
+.ql-snow.ql-toolbar .ql-picker-label:hover .ql-fill,
+.ql-snow .ql-toolbar .ql-picker-label:hover .ql-fill,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-fill,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-fill,
+.ql-snow.ql-toolbar .ql-picker-item:hover .ql-fill,
+.ql-snow .ql-toolbar .ql-picker-item:hover .ql-fill,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-fill,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-fill,
+.ql-snow.ql-toolbar button:hover .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar button:hover .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar button:focus .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar button:focus .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar button.ql-active .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar button.ql-active .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke.ql-fill {
+  fill: #06c;
+}
+.ql-snow.ql-toolbar button:hover .ql-stroke,
+.ql-snow .ql-toolbar button:hover .ql-stroke,
+.ql-snow.ql-toolbar button:focus .ql-stroke,
+.ql-snow .ql-toolbar button:focus .ql-stroke,
+.ql-snow.ql-toolbar button.ql-active .ql-stroke,
+.ql-snow .ql-toolbar button.ql-active .ql-stroke,
+.ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke,
+.ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke,
+.ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke,
+.ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke,
+.ql-snow.ql-toolbar button:hover .ql-stroke-miter,
+.ql-snow .ql-toolbar button:hover .ql-stroke-miter,
+.ql-snow.ql-toolbar button:focus .ql-stroke-miter,
+.ql-snow .ql-toolbar button:focus .ql-stroke-miter,
+.ql-snow.ql-toolbar button.ql-active .ql-stroke-miter,
+.ql-snow .ql-toolbar button.ql-active .ql-stroke-miter,
+.ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke-miter,
+.ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke-miter,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke-miter,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke-miter,
+.ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke-miter,
+.ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke-miter,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke-miter,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke-miter {
+  stroke: #06c;
+}
+@media (pointer: coarse) {
+  .ql-snow.ql-toolbar button:hover:not(.ql-active),
+  .ql-snow .ql-toolbar button:hover:not(.ql-active) {
+    color: #444;
+  }
+  .ql-snow.ql-toolbar button:hover:not(.ql-active) .ql-fill,
+  .ql-snow .ql-toolbar button:hover:not(.ql-active) .ql-fill,
+  .ql-snow.ql-toolbar button:hover:not(.ql-active) .ql-stroke.ql-fill,
+  .ql-snow .ql-toolbar button:hover:not(.ql-active) .ql-stroke.ql-fill {
+    fill: #444;
+  }
+  .ql-snow.ql-toolbar button:hover:not(.ql-active) .ql-stroke,
+  .ql-snow .ql-toolbar button:hover:not(.ql-active) .ql-stroke,
+  .ql-snow.ql-toolbar button:hover:not(.ql-active) .ql-stroke-miter,
+  .ql-snow .ql-toolbar button:hover:not(.ql-active) .ql-stroke-miter {
+    stroke: #444;
+  }
+}
+.ql-snow {
+  box-sizing: border-box;
+}
+.ql-snow * {
+  box-sizing: border-box;
+}
+.ql-snow .ql-hidden {
+  display: none;
+}
+.ql-snow .ql-out-bottom,
+.ql-snow .ql-out-top {
+  visibility: hidden;
+}
+.ql-snow .ql-tooltip {
+  position: absolute;
+  transform: translateY(10px);
+}
+.ql-snow .ql-tooltip a {
+  cursor: pointer;
+  text-decoration: none;
+}
+.ql-snow .ql-tooltip.ql-flip {
+  transform: translateY(-10px);
+}
+.ql-snow .ql-formats {
+  display: inline-block;
+  vertical-align: middle;
+}
+.ql-snow .ql-formats:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+.ql-snow .ql-stroke {
+  fill: none;
+  stroke: #444;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+.ql-snow .ql-stroke-miter {
+  fill: none;
+  stroke: #444;
+  stroke-miterlimit: 10;
+  stroke-width: 2;
+}
+.ql-snow .ql-fill,
+.ql-snow .ql-stroke.ql-fill {
+  fill: #444;
+}
+.ql-snow .ql-empty {
+  fill: none;
+}
+.ql-snow .ql-even {
+  fill-rule: evenodd;
+}
+.ql-snow .ql-thin,
+.ql-snow .ql-stroke.ql-thin {
+  stroke-width: 1;
+}
+.ql-snow .ql-transparent {
+  opacity: 0.4;
+}
+.ql-snow .ql-direction svg:last-child {
+  display: none;
+}
+.ql-snow .ql-direction.ql-active svg:last-child {
+  display: inline;
+}
+.ql-snow .ql-direction.ql-active svg:first-child {
+  display: none;
+}
+.ql-snow .ql-editor h1 {
+  font-size: 2em;
+}
+.ql-snow .ql-editor h2 {
+  font-size: 1.5em;
+}
+.ql-snow .ql-editor h3 {
+  font-size: 1.17em;
+}
+.ql-snow .ql-editor h4 {
+  font-size: 1em;
+}
+.ql-snow .ql-editor h5 {
+  font-size: 0.83em;
+}
+.ql-snow .ql-editor h6 {
+  font-size: 0.67em;
+}
+.ql-snow .ql-editor a {
+  text-decoration: underline;
+}
+.ql-snow .ql-editor blockquote {
+  border-left: 4px solid #ccc;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding-left: 16px;
+}
+.ql-snow .ql-editor code,
+.ql-snow .ql-editor pre {
+  background-color: #f0f0f0;
+  border-radius: 3px;
+}
+.ql-snow .ql-editor pre {
+  white-space: pre-wrap;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding: 5px 10px;
+}
+.ql-snow .ql-editor code {
+  font-size: 85%;
+  padding: 2px 4px;
+}
+.ql-snow .ql-editor pre.ql-syntax {
+  background-color: #23241f;
+  color: #f8f8f2;
+  overflow: visible;
+}
+.ql-snow .ql-editor img {
+  max-width: 100%;
+}
+.ql-snow .ql-picker {
+  color: #444;
+  display: inline-block;
+  float: left;
+  font-size: 14px;
+  font-weight: 500;
+  height: 24px;
+  position: relative;
+  vertical-align: middle;
+}
+.ql-snow .ql-picker-label {
+  cursor: pointer;
+  display: inline-block;
+  height: 100%;
+  padding-left: 8px;
+  padding-right: 2px;
+  position: relative;
+  width: 100%;
+}
+.ql-snow .ql-picker-label::before {
+  display: inline-block;
+  line-height: 22px;
+}
+.ql-snow .ql-picker-options {
+  background-color: #fff;
+  display: none;
+  min-width: 100%;
+  padding: 4px 8px;
+  position: absolute;
+  white-space: nowrap;
+}
+.ql-snow .ql-picker-options .ql-picker-item {
+  cursor: pointer;
+  display: block;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+.ql-snow .ql-picker.ql-expanded .ql-picker-label {
+  color: #ccc;
+  z-index: 2;
+}
+.ql-snow .ql-picker.ql-expanded .ql-picker-label .ql-fill {
+  fill: #ccc;
+}
+.ql-snow .ql-picker.ql-expanded .ql-picker-label .ql-stroke {
+  stroke: #ccc;
+}
+.ql-snow .ql-picker.ql-expanded .ql-picker-options {
+  display: block;
+  margin-top: -1px;
+  top: 100%;
+  z-index: 1;
+}
+.ql-snow .ql-color-picker,
+.ql-snow .ql-icon-picker {
+  width: 28px;
+}
+.ql-snow .ql-color-picker .ql-picker-label,
+.ql-snow .ql-icon-picker .ql-picker-label {
+  padding: 2px 4px;
+}
+.ql-snow .ql-color-picker .ql-picker-label svg,
+.ql-snow .ql-icon-picker .ql-picker-label svg {
+  right: 4px;
+}
+.ql-snow .ql-icon-picker .ql-picker-options {
+  padding: 4px 0px;
+}
+.ql-snow .ql-icon-picker .ql-picker-item {
+  height: 24px;
+  width: 24px;
+  padding: 2px 4px;
+}
+.ql-snow .ql-color-picker .ql-picker-options {
+  padding: 3px 5px;
+  width: 152px;
+}
+.ql-snow .ql-color-picker .ql-picker-item {
+  border: 1px solid transparent;
+  float: left;
+  height: 16px;
+  margin: 2px;
+  padding: 0px;
+  width: 16px;
+}
+.ql-snow .ql-picker:not(.ql-color-picker):not(.ql-icon-picker) svg {
+  position: absolute;
+  margin-top: -9px;
+  right: 0;
+  top: 50%;
+  width: 18px;
+}
+.ql-snow .ql-picker.ql-header .ql-picker-label[data-label]:not([data-label=''])::before,
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-label]:not([data-label=''])::before,
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-label]:not([data-label=''])::before,
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-label]:not([data-label=''])::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-label]:not([data-label=''])::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-label]:not([data-label=''])::before {
+  content: attr(data-label);
+}
+.ql-snow .ql-picker.ql-header {
+  width: 98px;
+}
+.ql-snow .ql-picker.ql-header .ql-picker-label::before,
+.ql-snow .ql-picker.ql-header .ql-picker-item::before {
+  content: 'Normal';
+}
+.ql-snow .ql-picker.ql-header .ql-picker-label[data-value='1']::before,
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value='1']::before {
+  content: 'Heading 1';
+}
+.ql-snow .ql-picker.ql-header .ql-picker-label[data-value='2']::before,
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value='2']::before {
+  content: 'Heading 2';
+}
+.ql-snow .ql-picker.ql-header .ql-picker-label[data-value='3']::before,
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value='3']::before {
+  content: 'Heading 3';
+}
+.ql-snow .ql-picker.ql-header .ql-picker-label[data-value='4']::before,
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value='4']::before {
+  content: 'Heading 4';
+}
+.ql-snow .ql-picker.ql-header .ql-picker-label[data-value='5']::before,
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value='5']::before {
+  content: 'Heading 5';
+}
+.ql-snow .ql-picker.ql-header .ql-picker-label[data-value='6']::before,
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value='6']::before {
+  content: 'Heading 6';
+}
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value='1']::before {
+  font-size: 2em;
+}
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value='2']::before {
+  font-size: 1.5em;
+}
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value='3']::before {
+  font-size: 1.17em;
+}
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value='4']::before {
+  font-size: 1em;
+}
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value='5']::before {
+  font-size: 0.83em;
+}
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value='6']::before {
+  font-size: 0.67em;
+}
+.ql-snow .ql-picker.ql-font {
+  width: 108px;
+}
+.ql-snow .ql-picker.ql-font .ql-picker-label::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item::before {
+  content: 'Sans Serif';
+}
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='serif']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='serif']::before {
+  content: 'Serif';
+}
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='monospace']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='monospace']::before {
+  content: 'Monospace';
+}
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='serif']::before {
+  font-family: Georgia, Times New Roman, serif;
+}
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='monospace']::before {
+  font-family: Monaco, Courier New, monospace;
+}
+.ql-snow .ql-picker.ql-size {
+  width: 98px;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-label::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item::before {
+  content: 'Normal';
+}
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-value='small']::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value='small']::before {
+  content: 'Small';
+}
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-value='large']::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value='large']::before {
+  content: 'Large';
+}
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-value='huge']::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value='huge']::before {
+  content: 'Huge';
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value='small']::before {
+  font-size: 10px;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value='large']::before {
+  font-size: 18px;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value='huge']::before {
+  font-size: 32px;
+}
+.ql-snow .ql-color-picker.ql-background .ql-picker-item {
+  background-color: #fff;
+}
+.ql-snow .ql-color-picker.ql-color .ql-picker-item {
+  background-color: #000;
+}
+.ql-toolbar.ql-snow {
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  padding: 8px;
+}
+.ql-toolbar.ql-snow .ql-formats {
+  margin-right: 15px;
+}
+.ql-toolbar.ql-snow .ql-picker-label {
+  border: 1px solid transparent;
+}
+.ql-toolbar.ql-snow .ql-picker-options {
+  border: 1px solid transparent;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 8px;
+}
+.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-label {
+  border-color: #ccc;
+}
+.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-options {
+  border-color: #ccc;
+}
+.ql-toolbar.ql-snow .ql-color-picker .ql-picker-item.ql-selected,
+.ql-toolbar.ql-snow .ql-color-picker .ql-picker-item:hover {
+  border-color: #000;
+}
+.ql-toolbar.ql-snow + .ql-container.ql-snow {
+  border-top: 0px;
+}
+.ql-snow .ql-tooltip {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 5px #ddd;
+  color: #444;
+  padding: 5px 12px;
+  white-space: nowrap;
+}
+.ql-snow .ql-tooltip::before {
+  content: 'Visit URL:';
+  line-height: 26px;
+  margin-right: 8px;
+}
+.ql-snow .ql-tooltip input[type='text'] {
+  display: none;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  height: 26px;
+  margin: 0px;
+  padding: 3px 5px;
+  width: 170px;
+}
+.ql-snow .ql-tooltip a.ql-preview {
+  display: inline-block;
+  max-width: 200px;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  vertical-align: top;
+}
+.ql-snow .ql-tooltip a.ql-action::after {
+  border-right: 1px solid #ccc;
+  content: 'Edit';
+  margin-left: 16px;
+  padding-right: 8px;
+}
+.ql-snow .ql-tooltip a.ql-remove::before {
+  content: 'Remove';
+  margin-left: 8px;
+}
+.ql-snow .ql-tooltip a {
+  line-height: 26px;
+}
+.ql-snow .ql-tooltip.ql-editing a.ql-preview,
+.ql-snow .ql-tooltip.ql-editing a.ql-remove {
+  display: none;
+}
+.ql-snow .ql-tooltip.ql-editing input[type='text'] {
+  display: inline-block;
+}
+.ql-snow .ql-tooltip.ql-editing a.ql-action::after {
+  border-right: 0px;
+  content: 'Save';
+  padding-right: 0px;
+}
+.ql-snow .ql-tooltip[data-mode='link']::before {
+  content: 'Enter link:';
+}
+.ql-snow .ql-tooltip[data-mode='formula']::before {
+  content: 'Enter formula:';
+}
+.ql-snow .ql-tooltip[data-mode='video']::before {
+  content: 'Enter video:';
+}
+.ql-snow a {
+  color: #06c;
+}
+.ql-container.ql-snow {
+  /*border: 1px solid #ccc;*/
+}
+
+/**
+定制样式
+ */
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 1.6rem;
+  color: #ccc;
+  background: #333;
+}
+
+@media (min-width: 1080px) {
+  body {
+    font-size: calc(1.2em + 0.5vw);
+  }
+}
+
+.ql-container img {
+  max-width: 100%;
+  display: block;
+}
+.ql-container video {
+  margin: 0 auto;
+  max-width: 100%;
+  object-fit: inherit;
+}
+
+.ql-align-center {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.ql-align-center img {
+  margin: auto;
+}
+
+.ql-align-right img {
+  margin: 0 0 0 auto;
+}
+
+.ql-container .qlbt-selection-line.qlbt-selection-line-left::before {
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  content: '';
+  width: 5px;
+  height: 5px;
+  background-color: #0589f3;
+  border-radius: 5px;
+}
+
+.ql-container .qlbt-selection-line.qlbt-selection-line-right::before {
+  position: absolute;
+  right: -2px;
+  bottom: -3px;
+  content: '';
+  width: 5px;
+  height: 5px;
+  background-color: #0589f3;
+  border-radius: 5px;
+}
+
+.quill-better-table-wrapper {
+  overflow-x: auto;
+}
+
+table.quill-better-table {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+table.quill-better-table td {
+  border: 1px solid #000;
+  padding: 2px 5px;
+}
+
+.qlbt-operation-menu {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  z-index: 100;
+  overflow: hidden;
+}
+.qlbt-operation-menu .qlbt-operation-menu-dividing {
+  height: 1px;
+  background-color: #efefef;
+}
+.qlbt-operation-menu .qlbt-operation-menu-subtitle {
+  color: #999;
+  font-size: 14px;
+  padding: 5px 16px;
+}
+.qlbt-operation-menu .qlbt-operation-color-picker {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 16px 10px;
+  background-color: #fff;
+  overflow: hidden;
+}
+.qlbt-operation-menu .qlbt-operation-color-picker .qlbt-operation-color-picker-item {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #595959;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.qlbt-operation-menu .qlbt-operation-menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  background-color: #fff;
+  cursor: pointer;
+  color: #595959;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.qlbt-operation-menu .qlbt-operation-menu-item:hover {
+  background-color: #efefef;
+}
+.qlbt-operation-menu .qlbt-operation-menu-item .qlbt-operation-menu-icon {
+  margin-right: 8px;
+  height: 20px;
+  width: 20px;
+  font-size: 0;
+}
+
+.qlbt-col-tool {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  z-index: 99;
+  height: 16px;
+}
+.qlbt-col-tool .qlbt-col-tool-cell {
+  position: relative;
+  background-color: #fff;
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+.qlbt-col-tool .qlbt-col-tool-cell:first-child {
+  border-left: 1px solid #000;
+}
+.qlbt-col-tool .qlbt-col-tool-cell-holder {
+  position: absolute;
+  right: -1px;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+  width: 1px;
+  background-color: transparent;
+  cursor: ew-resize;
+}
+.qlbt-col-tool .qlbt-col-tool-cell-holder:hover {
+  background-color: #0589f3;
+}
+.qlbt-col-tool .qlbt-col-tool-cell-holder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -6px;
+  display: block;
+  width: 8px;
+  height: 100%;
+}
+.qlbt-col-tool .qlbt-col-tool-cell-holder::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -6px;
+  display: block;
+  width: 8px;
+  height: 100%;
+}
+
+    </style>
+</head>
+<body class="ql-container"><div class="ql-editor"><h1>用户协议</h1><p><strong>更新日期：2021年6月10日</strong></p><p><strong>欢迎您使用“OviCut”短视频剪辑工具软件及服务！</strong></p><p><strong>本协议由用户（以下或称“您”）与杭州趣梦科技有限公司（以下简称“趣梦科技”“公司”）共同签订，</strong>趣梦科技依据本协议为您提供服务。请您在访问或使用前，仔细阅读本协议中所有内容，尤其是趣梦科技免责条款、对您的权利限制条款以及争议解决条款等重要条款内容，本协议中会以加粗显示方式提示您注意，您应重点阅读。<strong>您对“OviCut”的访问、使用等行为将被视为您对本协议的完全接受，同意受本协议约束。如您对本协议内容有任何疑问，均可向“OviCut”客服咨询。</strong></p><p>如果您系未成年人，请在法定监护人的陪同下阅读并确认本协议条款，在征得法定监护人同意后使用“OviCut”及其服务。</p><p>除非您完全接受本协议的全部内容，否则您无权下载、安装、使用（以下统称“使用”）“OviCut”软件，或者通过任何方式使用“OviCut”服务，或者获得“OviCut”软件提供的任何服务（本协议中统称“使用”）。若您使用“OviCut”软件及相关服务，则视为您已充分理解本协议并承诺作为本协议的一方当事人接受协议的约束。</p><h2>1、相关说明</h2><p>1.1 “OviCut”是趣梦科技及其关联方所拥有并运营的应用软件，关于“OviCut”及其服务的解释权归趣梦科技所有。</p><p>1.2 “用户”指所有直接或间接获取和使用“OviCut”软件及相关服务的使用者，包括自然人、法人和其他组织等。在本协议中称为“用户”或称“您”。</p><p>1.3 若您代表公司使用“OviCut”所提供服务时，在此您特别承诺有权代表公司，并对一切使用行为负责，您对本协议的接受将被自动视为您所代表的公司对本协议的接受。</p><p>1.4<strong> 本公司将不定期提供软件更新或改变（包括但不限于软件升级、修改、功能强化、开发新服务、软件替换等），以更好地提升用户体验及服务。趣梦科技有权根据“OviCut”及其服务的调整对本协议内容进行修改、更新，修改后的协议将在相关页面或其他合适的方式公布。用户如果不同意修改后的协议，可以放弃使用“OviCut”或相关服务；如果用户选择在协议修改后继续访问或使用“OviCut”，则视为用户接受对协议的所有修改。</strong></p><h2>2、使用“OviCut”软件及相关服务</h2><p>2.1.1您使用“OviCut”软件及相关服务，可以通过趣梦科技已授权的第三方下载等方式获取“OviCut”客户端应用程序。本公司无法保证非官方版本的“OviCut”软件能够正常使用，您因此遭受的损失与本公司无关。</p><p>2.1.2 “OviCut”提供供用户使用的客户端、软件或者其他任何网络及传播环境；</p><p>2.1.3 “OviCut”利用服务器，为用户提供信息网络存储空间及相关服务；</p><p>2.1.4 “OviCut”提供的任何其他技术和服务。</p><p>2.2<strong> 用户可使用“OviCut”提供的视频编辑等功能进行创作、传播作品（以下统称为“用户内容”），“OviCut”将不断提高并优化技术水平，向您提供其他个性化服务。</strong></p><p>2.3 <strong>对2.2“用户内容”，除另有约定外，用户同意授予趣梦科技及其关联公司、继承公司全球范围内的、免费的、不可撤销的、无限期的、可转授权/再许可（多层次授权/许可）的、非独家的权利，即趣梦科技有权对用户内容（全部或部分）进行任何形式的复制、修改、汇编、改编、信息网络传播、出版、展示、表演、制作衍生品及以其他方式使用或者授权第三方进行前述使用，且有权在对用户内容、“OviCut”及相关服务、趣梦科技品牌有关的任何宣传、推广、广告、营销和/或研究中使用。</strong></p><p>2.4 <strong>用户在此明确陈述并保证所有用户内容均为原创或已取得合法授权，不侵犯任何第三方的知识产权、名誉权、隐私权、肖像权、姓名权等合法权益，且有权对趣梦科技进行2.3条所述的权利授权，并自行承担全部的法律责任。</strong></p><p>2.5 趣梦科技并不担保所有上传的用户内容能够通过“OviCut”服务或者任何互联网传播途径为其他用户所获取、浏览。<strong>趣梦科技有权根据国家法律、法规、规章、政策等的要求以及本协议规定对用户内容进行审核，并有权在无须事先通知的情况下删除、屏蔽或断开违反法律、法规、规章、政策或本协议规定之内容。您并不因此款规定对用户内容免责或减轻责任，趣梦科技并不因其审核权需要对用户内容承担任何责任，亦不对其内容审核承担任何责任。趣梦科技有权独立判断用户的行为是否符合本协议相关规定并决定是否终止用户使用“OviCut”或相关服务的权利。</strong></p><p>2.6<strong> 趣梦科技特此提醒您在使用“OviCut”时可能接触到令人不快、不适当或令人厌恶之内容，您在此同意放弃由此而产生的针对趣梦科技的任何索赔权。</strong>对前述内容趣梦科技将视情况采取包括但不限于删除、屏蔽、断开链接，暂停发布该内容之用户使用“OviCut”或其全部或部分服务，保存有关记录，向有关机关报告等措施。</p><p>2.7 除用户与趣梦科技另有约定或经趣梦科技书面同意外，<strong>您同意“OviCut”仅供您个人非商业性质的使用，</strong>您不得对“OviCut”及其服务的任何部分进行复制、拷贝、出售或利用“OviCut”进行调查、宣传、广告等基于商业目的任何形式的使用，但“OviCut”某一特定服务另有使用指引或规则的除外。</p><p>2.8除另有特别声明或说明外，趣梦科技在“OviCut”及其服务中提供的内容（包括但不限于软件、图像、照片、动画、录像、录音、音乐、文字、音频、视频、程序、技术、网页、电子文档、衍生物）以及“OviCut”及其服务所依托或自身所含有的专利权、软件著作权及其他知识产权均归趣梦科技所有，未经趣梦科技许可，任何人不得擅自使用或破坏（包括但不限于反向工程、反向汇编、编译，利用技术手段窃取或查找原始编码），否则您应为此承担相应的法律责任。</p><p>2.9 除非得到趣梦科技事先书面授权，您不得以任何形式对“OviCut”软件及相关服务进行包括但不限于改编、复制、传播、垂直搜索、镜像或交易等未经授权的访问或使用。</p><p>2.10 趣梦科技许可您个人的、不可转让的、非独占地和非商业的合法使用“OviCut”软件及相关服务及服务中提供的内容的权利。本协议未明示授权的其他一切权利仍由趣梦科技保留，您在行使该些权利时须另行获得趣梦科技的书面许可，同时趣梦科技如未行使前述任何权利，并不构成对该权利的放弃。</p><p>2.11 “OviCut”服务有另行规定或约定的，从其规定或约定。</p><p><strong>2.12趣梦科技可能为不同的终端设备开发了不同的应用程序软件版本，您应当根据实际设备状况获取、下载、安装合适的版本。由于您使用的软件版本、设备、操作系统等不同以及其他第三方原因等导致您实际可使用的“OviCut”及其具体服务有差别，由此可能给您带来的不便，您表示理解，您不予追究或者豁免趣梦科技的相关责任。</strong></p><h2>3、个人信息保护</h2><p>尊重和保护用户的个人信息是趣梦科技的一项基本政策。趣梦科技将按照本协议及《“OviCut”隐私权政策》的规定收集、使用、储存、保护和提供您的个人信息。本协议对个人信息保护相关内容未作明确规定的，请参见《“OviCut”隐私权政策》。</p><p><strong>4数据保护规范</strong></p><p><strong>未经趣梦科技书面许可，用户不得自行或授权、允许、协助任何第三人对本协议“OviCut”软件及相关服务中信息内容进行如下行为：</strong></p><p><strong>4.1 复制、读取、采用“OviCut”软件及相关服务的信息内容，用于包括但不限于宣传、增加阅读量、浏览量等商业用途；</strong></p><p><strong>4.2 擅自编辑、整理、编排“OviCut”软件及相关服务的信息内容后在“OviCut”软件及相关服务的源页面以外的渠道进行展示；</strong></p><p><strong>4.3 采用包括但不限于特殊标识、特殊代码等任何形式的识别方法，自行或协助第三人对“OviCut”软件及相关服务的的信息或内容产生流量、阅读量引导、转移、劫持等不利影响；</strong></p><p><strong>4.4 其他非法获取“OviCut”软件及相关服务的信息内容的行为。</strong></p><p><strong>4.5 趣梦科技及其关联方为“OviCut”开发、运营提供技术支持，并对“OviCut”软件及相关服务的开发和运营等过程中产生的所有数据和信息等享有全部权利。</strong></p><h2>5、免责条款</h2><p><strong>5.1 趣梦科技对用户从“OviCut”获得的任何信息、内容或者广告宣传均无法保证其真实性、准确性、完整性、安全性、正当性、可用性。用户任何非与“OviCut”直接发生的交易和/或行为，趣梦科技不承担任何直接、间接、附带或衍生的损失和责任。</strong></p><p><strong>5.2 您在使用“OviCut”的过程中有对信息及内容的使用、观赏、分享、借鉴、转载、转发、转述、下载等行为时，应进行独立判断并合法使用，因您的前述行为造成任何自身损害及对第三方的损害，趣梦科技不承担任何责任。</strong></p><p><strong>5.3 如用户在“OviCut”不正当或非法使用产品服务、购买商品或者进行网络交易、未及时提供正确信息，而导致的所有直接或间接的损害，趣梦科技均不承担责任。</strong></p><p><strong>5.4 趣梦科技对“OviCut”各项服务下涉及的境内外基础电信运营商的移动通信网络的故障、技术缺陷、覆盖范围限制、计算机病毒、黑客攻击、用户所在位置、用户关机或其他非趣梦科技技术能力范围内的事因以及不可抗力因素造成的服务中断、账号不可用、用户发送的信息内容的丢失、出现乱码、错误接收、无法接收、迟延接收以及其他用户损失不承担责任。</strong></p><p><strong>5.5 您理解并同意，“OviCut”软件及相关服务可能会受多种因素的影响或干扰，趣梦科技不保证(包括但不限于)：“OviCut”软件及相关服务中任何错误都将能得到更正；“OviCut”软件及相关服务完全适合用户的使用要求；“OviCut”软件及相关服务不受干扰，或及时、安全、可靠或不出现错误；用户经由趣梦科技取得的任何软件、服务或其他材料符合用户的期望；</strong></p><p><strong>5.6在任何情况下，趣梦科技均不对任何间接性、后果性、惩罚性、偶然性、特殊性或刑罚性的损害，包括因您使用“OviCut”软件及相关服务而遭受的利润损失，承担责任。除法律法规另有明确规定外，趣梦科技对您承担的全部责任，无论因何原因或何种行为方式，始终不超过您因使用“OviCut”软件及相关服务期间而支付给趣梦科技的费用（如有）。</strong></p><h2>6、用户管理</h2><p>6.1 用户使用“OviCut”及其服务时必须遵守有关法律法规，不得在“OviCut”上或者利用“OviCut”的服务制作、复制、发布、传播以下信息：</p><p>(1) 反对宪法确定的基本原则的；</p><ol><li data-list="number1"><span class="ql-ui" contenteditable="false"></span>危害国家统一、主权和领土完整的；</li></ol><p>(3) 泄露国家秘密、危害国家安全或者损害国家荣誉和利益的；</p><p>(4) 煽动民族仇恨、民族歧视，破坏民族团结，或者侵害民族风俗、习惯的；</p><p>(5) 宣扬邪教、迷信的；</p><p>(6) 扰乱社会秩序，破坏社会稳定的；</p><p>(7) 诱导未成年人违法犯罪和渲染暴力、色情、赌博、恐怖活动的；</p><p>(8) 侮辱或者诽谤他人，侵害公民个人隐私等他人合法权益的；</p><p>(9) 危害社会公德，损害民族优秀文化传统的；</p><p>(10) 有关法律、法规、规章和政策规定禁止的其他内容。</p><p>6.2您应当对您使用本产品及相关服务的行为负责，除非法律允许或者经公司事先书面许可，您使用“OviCut”软件及相关服务不得具有下列行为：</p><p>6.2.1 使用未经公司授权或许可的任何插件、外挂、系统或第三方工具对“OviCut”软件及相关服务的正常运行进行干扰、破坏、修改或施加其他影响；</p><p>6.2.2 利用或针对“OviCut”软件及相关服务进行任何危害计算机网络安全的行为，包括但不限于：</p><p>（1）非法侵入他人网络、干扰他人网络正常功能、窃取网络数据等危害网络安全的活动；</p><p>（2）提供专门用于从事侵入网络、干扰网络正常功能及防护措施、窃取网络数据等危害网络安全活动的程序、工具；</p><p>（3）明知他人从事危害网络安全的活动的，为其提供技术支持、广告推广、支付结算等帮助；</p><p>（4）使用未经许可的数据或进入未经许可的服务器/账号；</p><p>（5）未经允许进入公众计算机网络或者他人计算机系统并删除、修改、增加存储信息；</p><p>（6）未经许可，企图探查、扫描、测试“OviCut”系统或网络的弱点或其它实施破坏网络安全的行为；</p><p>（7）企图干涉、破坏“OviCut”系统或网站的正常运行，故意传播恶意程序或病毒以及其他破坏干扰正常网络信息服务的行为；</p><p>（8）伪造TCP/IP数据包名称或部分名称。</p><p>（9）对“OviCut”进行任何反向工程、反向汇编、编译或者以其他方式尝试发现或获取本软件的源代码；</p><p>（10）其他违反法律法规、政策、公序良俗、干扰“OviCut”正常运营或侵犯其他用户或第三方合法权益内容的其他信息。</p><p>6.3用户不得以任何方式干扰“OviCut”的运营，包括但不限于不得对“OviCut”服务器或网络制造干扰、混乱、不得违反连接“OviCut”网络的任何要求、程序、政策或规则，否则趣梦科技将保留追究您法律责任的权利并有权提交给相关部门处理。</p><p>6.4用户需对自己在网上的行为承担法律责任。“OviCut”的系统记录有可能作为用户相关行为的证据。</p><p>6.5遵守趣梦科技的所有其他规定和规则。<strong>用户需对自己在使用“OviCut”过程中的行为承担法律责任。</strong>用户理解，如果趣梦科技发现“OviCut”上的信息存在明显属于6.1款所列内容之一，趣梦科技有权立即停止传输，保存有关记录，向国家有关机关报告，并且删除含有该内容的地址、链接、目录或关闭服务器。<strong>若用户的行为违反本协议或不符合相关规定，趣梦科技将作出独立判断立即取消用户对“OviCut”或相关服务的使用资格。</strong></p><p><strong>6.6 趣梦科技尊重版权人的合法权益，用户上传内容以及在“OviCut”上使用其他服务不得侵犯合法版权人的相关权益，否则，用户应自行承担相应法律责任。</strong></p><p>6.7用户行为须恪守规范。用户不得利用“OviCut”进行任何非法、违规、违反公序良俗、违背社会公德之活动，包括但不限于非法传销、弄虚作假、淫秽、色情、诈骗、侵权、反动活动等，亦不得损害“OviCut”及趣梦科技形象和利益，趣梦科技有权依据自己的独立判断在不事先通知的情况下立即删除相关内容、停止相关用户的帐号使用、禁止此类用户再使用“OviCut”，并追究用户的法律责任。</p><p>6.8 您理解并同意，趣梦科技可以通过电子邮件、站内信息、手机短信、网站公告或其他方式向您发送促销信息、活动信息、推广信息等各类信息。</p><p><strong>7知识产权</strong></p><p>7.1 趣梦科技在“OviCut”软件及相关服务中提供的内容（包括但不限于软件、技术、程序、网页、文字、图片、图像、音频、视频、图表、版面设计、电子文档等）的知识产权属于趣梦科技所有。本公司提供本服务时所依托的软件的著作权、专利权及其他知识产权均归公司所有。未经本公司许可，任何人不得擅自使用（包括但不限于通过任何机器人、蜘蛛等程序或设备监视、复制、传播、展示、镜像、上载、下载“OviCut”软件及相关服务中的内容）。未经本公司事先书面同意，您不得擅自使用、掩盖或更改本公司的版权声明、商标或其他权利声明，不得将本公司的商标以任何方式展示使用或作其他处理，也不得实施向他人明示或暗示有权展示、使用、或其他有权处理该些标识的行为。由于您违反本协议使用本公司上述商标、标识等给本公司或他人造成损失的，由您承担全部法律责任。</p><p>7.2 趣梦科技有权但无义务对用户发布的内容进行审核，有权根据相关证据结合相关法律法规及“OviCut”相关协议对侵权信息进行处理。</p><h2>8、保障</h2><p><strong>8.1为保障趣梦科技及其关联方的利益，用户同意支付由用户使用超出服务范围或用户违反本协议引起的损害赔偿费用、律师费用、诉讼费用、差旅费用，其他人使用用户的电脑、账号、和知识产权的追索费等。</strong></p><p><strong>8.2您同意授权趣梦科技以自己的名义对任何第三方侵犯用户内容知识产权的情形进行维权，包括但不限于监测、发函、和解、调解、诉讼、仲裁，趣梦科技有权对维权事宜独立决策并实施。</strong></p><p><strong>9、广告</strong></p><p>9.1您理解并同意，在您使用“OviCut”过程中，可能会出现一些推送信息、广告内容或推广信息。</p><p>9.2趣梦科技将依照法律规定履行广告及推广相关义务，您应当审慎判断所看到的广告或推广信息的真实性和可靠性。<strong>除法律法规明确规定外，您应对因该广告或推广信息进行的购买、交易、充值、支付等行为自行负责，对您因此所遭受的损失或损害，趣梦科技不承担任何责任。</strong></p><h2>10、服务变更、中止、终止</h2><p>10.1 <strong>您理解并同意，基于经营策略的调整、平台运营的需要，趣梦科技有权对“OviCut”及其服务进行调整、变更、中断、中止或终止。</strong></p><p>10.2因不可抗力、网络原因、通讯原因、设备原因、第三方人为原因、第三方服务瑕疵、第三方网站等导致的“OviCut”不能正常使用或中断、中止、终止的损失和风险，趣梦科技不承担任何责任。</p><p>10.3用户可随时根据实际情况中断服务、中止或终止使用“OviCut”。</p><p>10.4 <strong>如发生以下任一情形，趣梦科技有权立即关闭或删除用户的帐号及用户帐号中所有相关信息及文件，及/或禁止其继续使用相关文件或“OviCut”：</strong></p><p><strong>（1）用户违反相关法律法规的规定或违反本协议的约定。 </strong></p><p><strong>（2）按照法律法规规定，司法机关或主管部门的要求。 </strong></p><p><strong>（3）出于安全的原因或其他必要的情形。 </strong></p><p><strong>11、未成年人使用条款</strong></p><p>11.1若您为未成年人，应经监护人同意并在监护人的监护、指导阅读、理解本协议和使用“OviCut”及相关服务。</p><p>11.2因未成年人容易被迷惑、误导、利用且又缺乏自我保护能力，所以未成年人用户须在监护人的监督指导下使用“OviCut”及其服务，提高安全意识，合理安排上网时间，养成良好上网习惯。青少年用户应严格遵守《全国青少年网络文明公约》。</p><p><strong>11.3若未成年人用户违反法律法规、本协议内容，则由您及您的监护人承担因此而导致的全部法律责任。</strong></p><p><strong>11.4未成年人用户注册、使用“OviCut”的行为以及利用自己的账号或监护人的账号在“OviCut”上进行支付、充值、交易等的均视为已取得监护人的同意，故在此特别提示各监护人做好相关的监督指导工作，并保管好自己的账号、密码、支付账户和支付密码等。</strong></p><ol><li data-list="number1"><span class="ql-ui" contenteditable="false"></span><strong>违约责任</strong></li></ol><p><strong>12.1因您违反本协议或其他服务条款规定，引起第三方投诉或诉讼索赔的，您应当自行承担全部法律责任。因您的违法或违约行为导致本公司及其关联公司、控制公司向任何第三方赔偿或遭受国家机关处罚的，您还应足额赔偿本公司及其关联公司、控制公司因此遭受的全部损失。</strong></p><p><strong>12.2本公司尊重并保护法人、公民的知识产权、名誉权、姓名权、隐私权、肖像权等合法权益。您应保证，在使用“OviCut”及相关服务制作、复制、发布、传播的信息时不侵犯任何第三方的知识产权、名誉权、姓名权、隐私权、肖像权等权利及合法权益。针对第三方提出的全部权利主张，您应自行承担全部法律责任; 如因您的侵权行为导致本公司及其关联公司、控制公司遭受损失的（包括经济、商誉等损失），您还应足额赔偿本公司及其关联公司、控制公司遭受的全部损失。</strong></p><p><strong>12.3 您应在法律法规允许的范围内合理合法的使用“OviCut”及相关服务，未经真实权利人许可，不得擅自使用“OviCut”及相关服务制作、复制、发布、传播信息，更不得将其用于经营性质之目的或者非法目的，如因此侵犯任何第三方的合法权益的，您应自行承担全部法律责任;如因您的侵权行为导致本公司及其关联公司、控制公司遭受损失的（包括经济、商誉等损失），您还应足额赔偿本公司及其关联公司、控制公司遭受的全部损失。</strong></p><p><strong>13、联系方式</strong></p><p><strong>如您对本协议或使用“OviCut”服务过程中有任何问题，可通过以下方式联系趣梦科技客服：</strong></p><p><strong>在线客服：【设置】页-【反馈我们】-【客户服务】</strong></p><p><strong>人工客服：400-182-8866</strong></p><p><strong>邮件：</strong><a href="mailto:vmixeditor2020@gmail.com" target="_blank"><strong>vmixeditor2020@gmail.com</strong></a></p><p><strong>我们在收到您的反馈后将尽快向您答复。</strong></p><h2>14、其他</h2><p>14.1本协议之成立、生效、履行、解释及争议、纠纷解决，适用中华人民共和国大陆地区法律（不包括冲突法）。<strong>您同意因本协议引起的或与本协议有关的任何争议或纠纷在无法协商一致时，可向杭州市西湖区人民法院起诉，通过诉讼方式解决。</strong></p><p>14.2本协议之任何部分与相关法律法规相抵触，则该部分条款应按法律法规规定重新解释。本协议部分条款之无效或重新解释不影响其它条款之法律效力。</p><p>14.3用户对“OviCut”服务之任何部分或本协议的任何部分之意见及建议可通过“OviCut”客服与趣梦科技联系，趣梦科技将独立判断是否予以采纳。</p><p>14.4本协议所有条款的标题仅为阅读方便，本身并无实际涵义，不能作为本协议条款解释的依据。</p><p>14.5本协议条款无论因何种原因部分无效或不可执行，其余条款仍有效，对双方具有约束力。</p></div>
+</body>
+</html>
